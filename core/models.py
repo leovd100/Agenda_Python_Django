@@ -16,3 +16,7 @@ class Evento(models.Model):
 
 	def __str__(self):
 		return self.titulo # troca o nome do evento de objeto para o Título digitado
+
+
+	def getDataEvento(self):
+		return self.data_evento.strftime('%d/%m/%Y %H:%M Hrs')
