@@ -40,7 +40,12 @@ def logout_user(request):
 
 @login_required(login_url='/login/')
 def evento_user(request):
-	return render(request,'evento.html')
+	id_evento = request.GET.get('id')
+	dados = {}
+	if id_evento:
+		dados['evento'] = Evento.objects.get(id=id_evento)
+
+	return render(request,'evento.html',dados)
 
 @login_required(login_url='/login/')
 def submit_evento(request):
@@ -49,11 +54,32 @@ def submit_evento(request):
 		data_evento = request.POST.get('data_evento')
 		descricao = request.POST.get('descricao')
 		user = request.user # recebe o usuário
-		Evento.objects.create(titulo=titulo,  # insere titulo no banco de dados no campo título
+		local = request.POST.get('local')
+		id_evento = request.POST.get('id_evento')
+		if id_evento: #ATUALIZA
+			Evento.objects.filter(id=id_evento).update(titulo=titulo,  
+							data_evento=data_evento, 
+								descricao=descricao,
+								local=local,
+								user=user)
+		else: # CRIA
+			Evento.objects.create(titulo=titulo,  # insere titulo no banco de dados no campo título
 							data_evento=data_evento, # insere data_evento no banco de dados no campo data_evento
-								descricao=descricao, # insere descricao no banco de dados o  no campo descicao
+								descricao=descricao,
+								local=local, # insere descricao no banco de dados o  no campo descicao
 								user=user)  # insere usuario no banco de dados no campo user
 	return redirect('/')
 
+
+
+
+
+@login_required(login_url='/login/')
+def delete_evento(request,id_evento):
+	usuario = request.user
+	evento = Evento.objects.get(id=id_evento)
+	if usuario == evento.user:
+		evento.delete()
+	return redirect('/')
 # def index(request):
 # 	return redirect('/agenda/')

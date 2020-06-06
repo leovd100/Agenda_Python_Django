@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import lista_eventos, login_user,submit_login, logout_user,evento_user, submit_evento
+from core.views import lista_eventos, login_user,submit_login, logout_user,evento_user, submit_evento,delete_evento
 from django.views.generic import RedirectView 
 
 urlpatterns = [
@@ -26,6 +26,7 @@ urlpatterns = [
     path('login/submit',submit_login),
     path('logout/',logout_user),
     path('agenda/evento/',evento_user),
-    path('agenda/evento/submit',submit_evento)
+    path('agenda/evento/submit',submit_evento),
+    path('agenda/evento/delete/<int:id_evento>', delete_evento)
 
 ]

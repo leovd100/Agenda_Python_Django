@@ -21,8 +21,15 @@
 			list-style-type: none;
 			font-family: Arial;
 
-			">{{evento.titulo}} - {{evento.getDataEvento}}</li>
-		{% endfor %}
+			">{{evento.titulo}} - {{evento.getDataEvento}} 
+
+
+		(<a href="evento/?id={{evento.id}}">Editar</a>/<a href="evento/delete/{{evento.id}}">Excluir</a>)
+
+
+
+	</li>
+		{% endfor %} 
 		</ul>
 	
 	{% endblock %}
