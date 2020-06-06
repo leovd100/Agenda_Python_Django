@@ -38,5 +38,22 @@ def logout_user(request):
 	return redirect('/')
 
 
+@login_required(login_url='/login/')
+def evento_user(request):
+	return render(request,'evento.html')
+
+@login_required(login_url='/login/')
+def submit_evento(request):
+	if request.POST:
+		titulo = request.POST.get('titulo') # recebe o titulo do name titulo do input do html 
+		data_evento = request.POST.get('data_evento')
+		descricao = request.POST.get('descricao')
+		user = request.user # recebe o usuário
+		Evento.objects.create(titulo=titulo,  # insere titulo no banco de dados no campo título
+							data_evento=data_evento, # insere data_evento no banco de dados no campo data_evento
+								descricao=descricao, # insere descricao no banco de dados o  no campo descicao
+								user=user)  # insere usuario no banco de dados no campo user
+	return redirect('/')
+
 # def index(request):
 # 	return redirect('/agenda/')
