@@ -7,7 +7,11 @@
 		<button type="button">Novo Evento</button>
 	</a>
 		<ul style="font-size: 18px">
+
 		{% for evento in eventos %}
+		<div style={% if evento.evento_atrasado %}
+						 'color: red'
+						 {% endif %}>
 			<li style="
 
 
@@ -23,9 +27,10 @@
 
 			">{{evento.titulo}} - {{evento.getDataEvento}} 
 
-
-		(<a href="evento/?id={{evento.id}}">Editar</a>/<a href="evento/delete/{{evento.id}}">Excluir</a>)
-
+			
+				(<a href="evento/?id={{evento.id}}">Editar</a>
+				/<a href="evento/delete/{{evento.id}}">Excluir</a>)
+			</div>
 
 
 			</li>
