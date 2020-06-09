@@ -1,23 +1,51 @@
 <!DOCTYPE html>
+
 <html>
+
+
     <head>
+
             <title>Login</title>
             <meta charset="utf-8">
+            {% load static %}
+            <link rel="stylesheet" type="text/css" href='{% static "css/loginstyle.css" %}'>
+
     </head>
 
     <body>
-        <h1>Login</h1>
-        <form action="submit" method="POST">{% csrf_token %}
+
+        <div id='check'>
+            <img src='{% static "img/check.jpg" %}'>
+            <img src='{% static "img/check.jpg" %}'>
+            <img src='{% static "img/check.jpg" %}'>
+        </div>
+
+
+
+
+
+        <div id="formulario">
+           
+            
+                
+                <form action="submit" method="POST">{% csrf_token %}
+                    <h1 id='titulo'>Login</h1>
                     <div align = 'center'> 
                             
                         <label>Usuário</label>
-                        <input type="text" name="username"><br>
+
+                        <input id='name' type="text" name="username" size="10px"><br>
+
                         <label>Senha</label>
-                        <input type="password" name="password"><br>
+
+                        <input id='password' type="password" name="password" size="10px"><br>
+
                         <button type="submit"> Entrar </button>
                      </div>
                
-        </form>
+                </form>
+
+         </div>
         {% for message in messages %}
             <div align='center'>
                 <strong>ERRO : </strong>{{message}}
