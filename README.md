@@ -3,6 +3,11 @@
 #### Objetivo:
 	Este projeto tem como objetivo criar uma agenda estilo to-do list com Python Django. 
 	
+	
+	
+![Screens](https://i.imgur.com/KDryu8r.png "Screens")
+	
+<hr style="height: 10px;">
 ##### Login
 	Tela de login, com Admin, somente ele pode cadastrar novos usuários
 	

@@ -29,6 +29,8 @@ li{
 	margin-top: 50px;
 	text-decoration: underline;
 }
+
+
 #IconAgen #fundo{
 
 	position: absolute;
@@ -41,21 +43,30 @@ li{
 }
 
 
+
+
+
 #novoCad{
-	bottom: -320px;
-	position: relative;
-	
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+
 	font-family: Arial;
 	text-decoration: none;
 }
 
-button{
-	width: 200px;
-	height: 50px;
+#box{
+position: relative;
+
+display: flex;
+flex-direction: row;
+z-index: 5;
+bottom: -350px;
+}
+
+ #box button{
+
+	width: 150px;
+	height: 40px;
 	font-size: 15px;
 	font-weight: bold;
 	border-radius: 5%;
+	margin-left: 10px;
 }
