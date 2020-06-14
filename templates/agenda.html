@@ -1,40 +1,46 @@
+<!DOCTYPE html>
 
-{% extends "model-page.html" %}
+<html>
 
-	{% block content %}
+	<head>
+
+		<title>Agendamento</title>
+		<meta charset="utf-8">
+		 {% load static %}
+		<link rel="stylesheet" type="text/css" href='{% static "css/agendamentoStyle.css" %}'>
+	</head>
+	<body>
 		<h2 id = 'ag'>Agendamentos</h2>
-		<a href="evento/">
-		<button type="button">Novo Evento</button>
-	</a>
-		<ul style="font-size: 18px">
+
+		
+		
+
+		<ul  id='IconAgen' style="font-size: 18px">
 
 		{% for evento in eventos %}
-		<div style={% if evento.evento_atrasado %}
-						 'color: red'
-						 {% endif %}>
-			<li style="
 
+		<div style={% if evento.evento_atrasado %} 'color: red'	 {% endif %}>
 
-			border: 2px solid black;
-			width:  300px;
-			margin-top: 15px; 
-			background:#d9a9ff;
-			border-radius: 15px;
-			padding: 3px;
-			box-shadow: 5px 5px 15px 2px black;
-			list-style-type: none;
-			font-family: Arial;
-
-			">{{evento.titulo}} - {{evento.getDataEvento}} 
+						<li>{{evento.titulo}} - {{evento.getDataEvento}} 
 
 			
-				(<a href="evento/?id={{evento.id}}">Editar</a>
-				/<a href="evento/delete/{{evento.id}}">Excluir</a>)
-			</div>
+						(<a href="evento/?id={{evento.id}}">Editar</a>
+						/<a href="evento/delete/{{evento.id}}">Excluir</a>)</li>
+
+				</div>
 
 
-			</li>
-				{% endfor %} 
+							
+						{% endfor %} 
+						<div id='fundo'></div>
 				</ul>
+
+				<a id='novoCad' href="evento/">
+						<button type="button">Novo Evento</button>
+				</a>
+
 	
-	{% endblock %}
+		</body>
+
+
+</html>

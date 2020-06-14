@@ -1,0 +1,61 @@
+#IconAgen{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 5px;
+
+
+}
+
+li{
+
+
+			border: 2px solid black;
+			width:  300px;
+			margin-top: 15px; 
+			background:#b3ffe0;
+			border-radius: 15px;
+			padding: 3px;
+			box-shadow: 5px 5px 15px 2px black;
+			list-style-type: none;
+			font-family: Arial;
+}
+#ag {
+
+	font-family: Arial;
+	position: relative;
+	font-size: 30px;
+	text-align: center;
+	margin-top: 50px;
+	text-decoration: underline;
+}
+#IconAgen #fundo{
+
+	position: absolute;
+	width: 500px;
+	height: 450px;
+	border:3px solid #252725;
+	background-color: grey;
+	z-index: -1;
+
+}
+
+
+#novoCad{
+	bottom: -320px;
+	position: relative;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: Arial;
+	text-decoration: none;
+}
+
+button{
+	width: 200px;
+	height: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 5%;
+}

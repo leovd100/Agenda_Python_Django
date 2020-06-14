@@ -1,35 +1,61 @@
-{% extends "model-page.html" %}
+<html>
+	<head>
+			<title>Evento</title>
+			<meta charset="utf-8">
+			{% load static %}
+			<link rel="stylesheet" type="text/css" href='{% static "css/criarEvento.css" %}'>
+	</head>
+	<body>
+				
+				<h2>Evento</h2>
+
+				<form id ='formulario' action="submit" method="POST">{% csrf_token %}
+					<div id ='boxform'>
+									<input type="number" name="id_evento" value="{{evento.id}}" hidden>
+
+
+								<div alt='Divi de titulo'>
+									<label>Titulo</label> &nbsp;
+									
+										 <input type="text" name="titulo" size="22" value="{{evento.titulo}}"><br>
+									</div>
+
+									<br>
+								<div>
+
+								<label>DataEvento</label> &nbsp;
+									 
+									<input type="dateTime-Local" name="data_evento" value="{{evento.get_data_input_evento}}"><br>
+
+
+							   </div>
+									<br>
+
+
+									<div>
+								<label>Local do evento</label> &nbsp;
+									
+										<input type="text" name="local" size="22" value="{{evento.local}}"><br>
+								</div>
+								<br>
 
 
 
-{% block content %}
-<h2>Evento</h2>
-<form action="submit" method="POST">{% csrf_token %}
-	
-	<input type="number" name="id_evento" value="{{evento.id}}" hidden>
+
+								<div id ='descricao'>
+								<label>Descrição</label>&nbsp;
+									<br><br>
+										<textarea name="Descrição" rows="5" cols="24">
+
+											{{evento.descricao}}
+										</textarea>
+								</div>
+									<br><br>
 
 
+								<button type="submit">Salvar</button> <a href="/"> <button type="button" name="descricao"> Cancelar</button> </a>
+				</div>
+				</form>
 
-	<label>Titulo</label>
-		<br>
-			 <input type="text" name="titulo" size="22" value="{{evento.titulo}}"><br>
-
-	<label>DataEvento</label> 
-		<br> 
-			<input type="dateTime-Local" name="data_evento" value="{{evento.get_data_input_evento}}"><br>
-
-	<label>Local do evento</label> 
-		<br>
-			<input type="text" name="local" size="22" value="{{evento.local}}"><br>
-	
-	<label>Descrição</label>
-		<br><br>
-			<textarea name="Descrição" rows="5" cols="24">
-
-				{{evento.descricao}}
-			</textarea>
-		<br><br>
-	<button type="submit">Salvar</button> <a href="/"> <button type="button" name="descricao"> Cancelar</button> </a>
-</form>
-
-{% endblock %}
+	</body>
+</html>

@@ -23,3 +23,10 @@ No HTML, adicionamos o {% load static %} em cima da tag < link> e no SRC adicion
 
 
 ![load](https://i.imgur.com/cYw8Geq.png "load")
+
+Lista de tarefas (Retificada)
+![lista](https://i.imgur.com/mAHZp66.png "lista")
+
+tela de cadastro de novo item da lista
+
+![Cadastro de novo item](https://i.imgur.com/MWQxBG7.png "Cadastro de novo item")
